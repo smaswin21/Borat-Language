@@ -28,3 +28,5 @@ char* get_file_contents(const char* filepath)
     printf("Error reading file %s\n", filepath);
     exit(2);
 }
+
+
