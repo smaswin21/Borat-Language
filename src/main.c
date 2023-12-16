@@ -18,7 +18,7 @@ int main(int argc, char* argv[])
         for(int i = 1; i < argc; i++){
             int len = strlen(argv[i]);
             char* last_four = &argv[i][len-6];
-            if(strcmp(last_four,".hello") == 0){
+            if(strcmp(last_four,".borat") == 0){
                                 lexer_T* lexer = init_lexer(
                     get_file_contents(argv[i])
                 );
