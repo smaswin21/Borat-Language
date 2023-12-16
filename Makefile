@@ -1,4 +1,4 @@
-exec = hello.out
+exec = borat.out
 sources = $(wildcard src/*.c)
 objects = $(sources:.c=.o)
 flags = -g
@@ -12,7 +12,7 @@ $(exec): $(objects)
 
 install:
 	make
-	cp ./hello.out /usr/local/bin/hello-master
+	cp ./borat.out /usr/local/bin/hello-master
 
 clean:
 	-rm *.out
