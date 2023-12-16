@@ -1,7 +1,7 @@
 function dosomething(x, y)
 {
-    print(x);
-    print(y);
+    veryNice(x);
+    veryNice(y);
 };
 
 dosomething("hello", "world");
@@ -9,7 +9,11 @@ dosomething("hello", "world");
 
 function sayyourname(name)
 {
-    print(name);
+    veryNice(name);
+
 };
 
 sayyourname("john doe");
+
+
+goodbyeMyFriends(sayyourname)
