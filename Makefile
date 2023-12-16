@@ -12,7 +12,7 @@ $(exec): $(objects)
 
 install:
 	make
-	cp ./borat.out /usr/local/bin/hello-master
+	cp ./borat.out /usr/local/bin/hello_master
 
 clean:
 	-rm *.out
