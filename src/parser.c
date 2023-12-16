@@ -2,7 +2,7 @@
 #include "include/scope.h"
 #include <stdio.h>
 #include <string.h>
-
+#include "include/AST.h"
 
 parser_T* init_parser(lexer_T* lexer)
 {
@@ -227,19 +227,100 @@ AST_T* parser_parse_string(parser_T* parser, scope_T* scope)
     return ast_string;
 }
 
-AST_T* parser_parse_id(parser_T* parser, scope_T* scope)
-{
-    if (strcmp(parser->current_token->value, "var") == 0)
-    {
+AST_T* parser_parse_id(parser_T* parser, scope_T* scope) {
+    if (strcmp(parser->current_token->value, "Suck!") == 0) {
         return parser_parse_variable_definition(parser, scope);
-    }
-    else
-    if (strcmp(parser->current_token->value, "function") == 0)
-    {
+    } else if (strcmp(parser->current_token->value, "Hey, what your name?") == 0) {
+        return parser_parse_if_statement(parser, scope);
+    } else if (strcmp(parser->current_token->value, "Who you with?") == 0) {
+        return parser_parse_else_statement(parser, scope);
+    } else if (strcmp(parser->current_token->value, "Uh, you mean to the restroom?") == 0) {
+        return parser_parse_while_statement(parser, scope);
+    } else if (strcmp(parser->current_token->value, "function") == 0) {
         return parser_parse_function_definition(parser, scope);
-    }
-    else
-    {
+    } else {
         return parser_parse_variable(parser, scope);
     }
+}
+
+
+AST_T* parser_parse_variable_definition(parser_T* parser, scope_T* scope) {
+    // Consume the "Suck!" token
+    parser_eat(parser, TOKEN_VAR); // Assuming TOKEN_VAR represents "Suck!"
+
+    // Expect a variable name after "Suck!"
+    char* variable_name = parser->current_token->value;
+    parser_eat(parser, TOKEN_ID);
+
+    // Expect an equals sign
+    parser_eat(parser, TOKEN_EQUALS);
+
+    // Parse the expression on the right-hand side of the equals sign
+    AST_T* value = parser_parse_expr(parser, scope);
+
+    // Construct the variable definition AST node
+    AST_T* var_def = init_ast(AST_VARIABLE_DEFINITION);
+    var_def->variable_definition_variable_name = variable_name;
+    var_def->variable_definition_value = value;
+
+    return var_def;
+}
+
+AST_T* parser_parse_if_statement(parser_T* parser, scope_T* scope) {
+    // Consume the "Hey, what your name?" token
+    parser_eat(parser, TOKEN_IF);
+
+    // Parse the condition inside parentheses
+    parser_eat(parser, TOKEN_LPAREN);
+    AST_T* condition = parser_parse_expr(parser, scope);
+    parser_eat(parser, TOKEN_RPAREN);
+
+    // Parse the statement block inside braces
+    parser_eat(parser, TOKEN_LBRACE);
+    AST_T* body = parser_parse_statements(parser, scope);
+    parser_eat(parser, TOKEN_RBRACE);
+
+     // Add the missing import statement for the AST_T structure.
+    AST_T* if_statement = init_ast(AST_IF);
+    if_statement->condition = condition;
+    if_statement->if_body = body;
+
+    return if_statement;
+}
+
+AST_T* parser_parse_else_statement(parser_T* parser, scope_T* scope) {
+    // Consume the "Who you with?" token
+    parser_eat(parser, TOKEN_ELSE);
+
+    // Parse the statement block inside braces
+    parser_eat(parser, TOKEN_LBRACE);
+    AST_T* body = parser_parse_statements(parser, scope);
+    parser_eat(parser, TOKEN_RBRACE;
+
+    AST_T* else_statement = init_ast(AST_ELSE);
+    else_statement->else_body = body;
+
+    return else_statement;
+}
+
+AST_T* parser_parse_while_statement(parser_T* parser, scope_T* scope) {
+    // Consume the "Uh, you mean to the restroom?" token
+    parser_eat(parser, TOKEN_WHILE);
+
+    // Parse the condition inside parentheses
+    parser_eat(parser, TOKEN_LPAREN);
+    AST_T* condition = parser_parse_expr(parser, scope);
+    parser_eat(parser, TOKEN_RPAREN);
+
+    // Parse the statement block inside braces
+    parser_eat(parser, TOKEN_LBRACE);
+    AST_T* body = parser_parse_statements(parser, scope);
+    parser_eat(parser, TOKEN_RBRACE;
+
+    #include "AST.h" // Add the missing import statement for the AST_T structure.
+    AST_T* while_statement = init_ast(AST_WHILE);
+    while_statement->condition = condition;
+    while_statement->while_body = body;
+
+    return while_statement;
 }

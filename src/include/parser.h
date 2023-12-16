@@ -40,4 +40,11 @@ AST_T* parser_parse_variable(parser_T* parser, scope_T* scope);
 AST_T* parser_parse_string(parser_T* parser, scope_T* scope);
 
 AST_T* parser_parse_id(parser_T* parser, scope_T* scope);
+
+AST_T* parser_parse_else_statement(parser_T* parser, scope_T* scope);
+
+AST_T* parser_parse_while_statement(parser_T* parser, scope_T* scope);
+
+AST_T* parser_parse_if_statement(parser_T* parser, scope_T* scope);
+
 #endif

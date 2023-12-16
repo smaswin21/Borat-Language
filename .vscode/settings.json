@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "scope.h": "c",
+        "ast.h": "c"
+    }
+}
