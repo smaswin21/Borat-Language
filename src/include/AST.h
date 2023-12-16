@@ -11,7 +11,10 @@ typedef struct AST_STRUCT
         AST_FUNCTION_CALL,
         AST_STRING,
         AST_COMPOUND,
-        AST_NOOP
+        AST_NOOP,
+        AST_IF,          // Added AST node type for 'if' statements
+        AST_ELSE,        // Added AST node type for 'else' statements
+        AST_WHILE        // Added AST node type for 'while' statements
     } type;
 
     struct SCOPE_STRUCT* scope;
@@ -40,7 +43,19 @@ typedef struct AST_STRUCT
     /* AST_COMPOUND */
     struct AST_STRUCT** compound_value;
     size_t compound_size;
+
+    /* AST_IF */
+    struct AST_STRUCT* if_condition;      // Condition for 'if' statement
+    struct AST_STRUCT* if_body;           // Body of 'if' statement
+
+    /* AST_ELSE */
+    struct AST_STRUCT* else_body;         // Body of 'else' statement
+
+    /* AST_WHILE */
+    struct AST_STRUCT* while_condition;   // Condition for 'while' statement
+    struct AST_STRUCT* while_body;        // Body of 'while' statement
 } AST_T;
 
 AST_T* init_ast(int type);
+
 #endif

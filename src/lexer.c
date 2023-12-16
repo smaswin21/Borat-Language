@@ -126,7 +126,6 @@ char* lexer_get_current_char_as_string(lexer_T* lexer)
     return str;
 }
 */
-
 #include "include/lexer.h"
 #include <stdlib.h>
 #include <string.h>

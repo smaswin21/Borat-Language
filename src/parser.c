@@ -131,23 +131,6 @@ AST_T* parser_parse_function_call(parser_T* parser, scope_T* scope)
     return function_call;
 }
 
-AST_T* parser_parse_variable_definition(parser_T* parser, scope_T* scope)
-{
-    parser_eat(parser, TOKEN_ID); // var
-    char* variable_definition_variable_name = parser->current_token->value;
-    parser_eat(parser, TOKEN_ID); // var name
-    parser_eat(parser, TOKEN_EQUALS);
-    AST_T* variable_definition_value = parser_parse_expr(parser, scope);
-
-    AST_T* variable_definition = init_ast(AST_VARIABLE_DEFINITION);
-    variable_definition->variable_definition_variable_name = variable_definition_variable_name;
-    variable_definition->variable_definition_value = variable_definition_value;
-
-    variable_definition->scope = scope;
-
-    return variable_definition;
-}
-
 AST_T* parser_parse_function_definition(parser_T* parser, scope_T* scope)
 {
     AST_T* ast = init_ast(AST_FUNCTION_DEFINITION);
@@ -295,7 +278,7 @@ AST_T* parser_parse_else_statement(parser_T* parser, scope_T* scope) {
     // Parse the statement block inside braces
     parser_eat(parser, TOKEN_LBRACE);
     AST_T* body = parser_parse_statements(parser, scope);
-    parser_eat(parser, TOKEN_RBRACE;
+    parser_eat(parser, TOKEN_RBRACE);
 
     AST_T* else_statement = init_ast(AST_ELSE);
     else_statement->else_body = body;
@@ -315,7 +298,7 @@ AST_T* parser_parse_while_statement(parser_T* parser, scope_T* scope) {
     // Parse the statement block inside braces
     parser_eat(parser, TOKEN_LBRACE);
     AST_T* body = parser_parse_statements(parser, scope);
-    parser_eat(parser, TOKEN_RBRACE;
+    parser_eat(parser, TOKEN_RBRACE);
 
     #include "AST.h" // Add the missing import statement for the AST_T structure.
     AST_T* while_statement = init_ast(AST_WHILE);
