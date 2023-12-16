@@ -124,7 +124,7 @@ AST_T* visitor_visit_function_call(visitor_T* visitor, AST_T* node)
         return builtin_function_exit(visitor, node->function_call_arguments, node->function_call_arguments_size);
     }
 
-    if (strcmp(node->function_call_name, "Who!") == 0)
+    if (strcmp(node->function_call_name, "Who") == 0)
     {
         return builtin_function_clear(visitor, node->function_call_arguments, node->function_call_arguments_size);
     }

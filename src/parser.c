@@ -211,13 +211,13 @@ AST_T* parser_parse_string(parser_T* parser, scope_T* scope)
 }
 
 AST_T* parser_parse_id(parser_T* parser, scope_T* scope) {
-    if (strcmp(parser->current_token->value, "Suck!") == 0) {
+    if (strcmp(parser->current_token->value, "Suck") == 0) {
         return parser_parse_variable_definition(parser, scope);
-    } else if (strcmp(parser->current_token->value, "Hey, what your name?") == 0) {
+    } else if (strcmp(parser->current_token->value, "Heywhatyourname") == 0) {
         return parser_parse_if_statement(parser, scope);
-    } else if (strcmp(parser->current_token->value, "Who you with?") == 0) {
+    } else if (strcmp(parser->current_token->value, "Whoyouwith") == 0) {
         return parser_parse_else_statement(parser, scope);
-    } else if (strcmp(parser->current_token->value, "Uh, you mean to the restroom?") == 0) {
+    } else if (strcmp(parser->current_token->value, "Uhrestroom?") == 0) {
         return parser_parse_while_statement(parser, scope);
     } else if (strcmp(parser->current_token->value, "function") == 0) {
         return parser_parse_function_definition(parser, scope);
