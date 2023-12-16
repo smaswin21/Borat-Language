@@ -265,7 +265,8 @@ AST_T* parser_parse_if_statement(parser_T* parser, scope_T* scope) {
 
      // Add the missing import statement for the AST_T structure.
     AST_T* if_statement = init_ast(AST_IF);
-    if_statement->condition = condition;
+    // Correcting the member name
+    if_statement->if_condition = condition;
     if_statement->if_body = body;
 
     return if_statement;
@@ -300,9 +301,9 @@ AST_T* parser_parse_while_statement(parser_T* parser, scope_T* scope) {
     AST_T* body = parser_parse_statements(parser, scope);
     parser_eat(parser, TOKEN_RBRACE);
 
-    #include "AST.h" // Add the missing import statement for the AST_T structure.
+    #include "include/AST.h" // Add the missing import statement for the AST_T structure.
     AST_T* while_statement = init_ast(AST_WHILE);
-    while_statement->condition = condition;
+    while_statement->while_condition = condition;
     while_statement->while_body = body;
 
     return while_statement;

@@ -1,14 +1,14 @@
-function dosomething()
-{
-    print("This is our function calling!");
-};
+Suck! x = 5;
+Suck! message = "Hello, Borat!";
 
-dosomething();
-dosomething();
-dosomething();
-dosomething();
-dosomething();
-dosomething();
-dosomething();
+Hey, what your name? (x > 0) {
+    writeOut message;
+    x = x - 1;
+} Who you with? {
+    writeOut "Goodbye, Borat!";
+}
 
-yo();
+Uh, you mean to the restroom? (x < 10) {
+    writeOut "Counting: " + x;
+    x = x + 1;
+}
