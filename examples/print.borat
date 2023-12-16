@@ -1,4 +1,4 @@
-var name = "Borat Sagdiyev Борат Маргарет Сағдиев";
-var othername = "Azamat Bagatov";
+Suck name = "Borat Sagdiyev Борат Маргарет Сағдиев";
+Suck othername = "Azamat Bagatov";
 veryNice(name, othername);
 
