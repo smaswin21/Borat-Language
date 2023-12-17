@@ -73,28 +73,38 @@ Welcome to the Borat Programming Language project, where we've created an interp
 ``` css
 Borat-Lang-using-C/
 ├── examples/
-│ ├── functions.borat
-│ ├── main.borat
-│ └── print.borat
+│   ├── functions.borat
+│   ├── functions2.borat
+│   ├── main.borat
+│   └── print.borat
+├── regular_expressions/
+│   ├── categorized dataset.xlsx
+│   ├── regex_subtitles.ipynb
+│   └── subtitles.txt
 ├── src/
-│ ├── AST.c
-│ ├── lexer.c
-│ ├── main.c
-│ ├── parser.c
-│ ├── scope.c
-│ ├── token.c
-│ └── visitor.c
+│   ├── AST.c
+│   ├── io.c
+│   ├── lexer.c
+│   ├── main.c
+│   ├── parser.c
+│   ├── scope.c
+│   ├── token.c
+│   └── visitor.c
 ├── src/include/
-│ ├── AST.h
-│ ├── lexer.h
-│ ├── main.h
-│ ├── parser.h
-│ ├── scope.h
-│ ├── token.h
-│ └── visitor.h
+│   ├── AST.h
+│   ├── io.h
+│   ├── lexer.h
+│   ├── main.h
+│   ├── parser.h
+│   ├── scope.h
+│   ├── token.h
+│   └── visitor.h
 ├── .vscode/
+│   ├── c_cpp_properties.json
+│   └── settings.json
 ├── Makefile
 └── README.md
+
 ```
 
 ### 🚀 Usage
