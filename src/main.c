@@ -8,7 +8,7 @@
 #define MAX_LIMIT 20
 void print_help()
 {
-    printf("Usage:\borat.out <filename>\n");
+    printf("Usage:\ borat.out <filename>\n");
     exit(1);
 }
 

@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "scope.h": "c",
-        "ast.h": "c"
+        "ast.h": "c",
+        "token.h": "c"
     }
 }
