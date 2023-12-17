@@ -4,6 +4,10 @@
 
 Welcome to the Borat Programming Language project, where we've created an interpreted programming language inspired by the iconic character Borat. This project is a unique blend of humor and technical skill, aimed at providing a fresh perspective on programming language design and implementation using C. 
 
+
+![borat](https://github.com/smaswin21/Borat-Lang-using-C/assets/130904493/98938673-df94-4b90-9628-633cb6cd5eb8)
+
+
 ### Key Features:
 
 🎭 Unique syntax inspired by Borat's linguistic style using regular expressions.
