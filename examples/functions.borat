@@ -1,2 +1,6 @@
-Suck name= 10;
-veryNice(name)
+Suck! counter = 0;
+
+Uh, you mean to the restroom? (counter < 5) {
+    writeOut "Count is: " + counter;
+    counter = counter + 1;
+}
