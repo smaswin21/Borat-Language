@@ -1,6 +1,6 @@
-Suck! counter = 0;
+Suck counter = 0;
 
-Uh, you mean to the restroom? (counter < 5) {
+Uhrestroom? (counter < 5) {
     writeOut "Count is: " + counter;
     counter = counter + 1;
 }
