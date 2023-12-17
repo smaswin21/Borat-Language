@@ -103,7 +103,7 @@ Experiment with the provided examples or write your own Borat language programs.
 
 - Program 1 : Input and Output
 
-<img width="1029" alt="Screenshot 2023-12-17 at 16 11 00" src="https://github.com/smaswin21/Borat-Lang-using-C/assets/130904493/4d31e215-6841-4b84-9dce-b1e4758f7300">
+<img width="1175" alt="Screenshot 2023-12-17 at 20 22 59" src="https://github.com/smaswin21/Borat-Lang-using-C/assets/130904493/703bdf02-e180-4e31-9528-954184e8be78">
 
 
 
